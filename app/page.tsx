@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const whatsappNumber = '50687654321';
 const bookingMessage = encodeURIComponent(
   'Hola La Vieja Adventures, quiero reservar una experiencia de Birdwatching. ¿Me pueden compartir disponibilidad y opciones?'
@@ -14,41 +16,62 @@ const navItems = [
 ];
 
 const heroImages = [
-  commonsImage('Pteroglossus torquatus Costa Rica.jpg', 2000),
-  commonsImage('Green-crowned Brilliant Hummingbird (46436316322).jpg', 2000),
-  commonsImage('Pharomachrus mocinno Monteverde 01.jpg', 2000),
+  {
+    src: commonsImage('Pteroglossus torquatus Costa Rica.jpg', 2000),
+    alt: 'Arasarí acollarado en bosque tropical para el hero de birdwatching en Costa Rica',
+  },
+  {
+    src: commonsImage('Green-crowned Brilliant Hummingbird (46436316322).jpg', 2000),
+    alt: 'Colibrí verde brillante usado como imagen hero de fotografía de aves',
+  },
+  {
+    src: commonsImage('Pharomachrus mocinno Monteverde 01.jpg', 2000),
+    alt: 'Quetzal resplandeciente en bosque nuboso de Costa Rica',
+  },
 ];
 
 const gallery = [
   {
     src: commonsImage("Hoffmann\'s Woodpecker.jpg", 1200),
-    alt: 'Carpintero de Hoffmann real fotografiado en Costa Rica',
+    alt: 'Carpintero de Hoffmann posado en un tronco durante una experiencia de birdwatching en Costa Rica',
     label: 'Carpinteros',
+    width: 900,
+    height: 1200,
   },
   {
     src: commonsImage('Green-crowned Brilliant Hummingbird (46436303872).jpg', 1400),
-    alt: 'Colibrí Green-crowned Brilliant real en Costa Rica',
+    alt: 'Colibrí verde brillante sobre vegetación tropical para fotografía de naturaleza',
     label: 'Colibríes',
+    width: 1200,
+    height: 900,
   },
   {
     src: commonsImage('Blue-grey tanager (Thraupis episcopus cana).jpg', 1400),
-    alt: 'Tangara azulada real posada en Costa Rica',
+    alt: 'Tangara azulada posada en una rama dentro del bosque tropical costarricense',
     label: 'Tangaras',
+    width: 1200,
+    height: 900,
   },
   {
     src: commonsImage('Pharomachrus mocinno Monteverde 01.jpg', 1200),
-    alt: 'Quetzal resplandeciente real fotografiado en Monteverde, Costa Rica',
+    alt: 'Quetzal resplandeciente, ave icónica de Costa Rica, en una rama de bosque montano',
     label: 'Aves icónicas',
+    width: 900,
+    height: 1200,
   },
   {
     src: commonsImage('Pteroglossus torquatus Costa Rica.jpg', 1400),
-    alt: 'Arasarí acollarado real fotografiado en Costa Rica',
+    alt: 'Arasarí acollarado observado en el dosel tropical durante el tour de aves',
     label: 'Dosel tropical',
+    width: 1200,
+    height: 900,
   },
   {
     src: commonsImage('Acorn Woodpecker (7047729929).jpg', 1200),
-    alt: 'Carpintero real fotografiado en el valle de Savegre, Costa Rica',
+    alt: 'Carpintero fotografiado en un bosque montano como referencia visual para observación de aves',
     label: 'Bosque montano',
+    width: 1200,
+    height: 900,
   },
 ];
 
@@ -98,6 +121,7 @@ const experiences = [
     duration: '2.5–3 horas',
     copy: 'Caminata guiada por senderos, estaciones de observación y puntos de alta actividad para descubrir especies locales con interpretación naturalista.',
     points: ['Guía local experto', 'Checklist de aves', 'Ritmo familiar'],
+    image: gallery[4],
   },
   {
     title: 'Bird Photography Tour',
@@ -105,6 +129,7 @@ const experiences = [
     duration: '3.5–4 horas',
     copy: 'Ruta diseñada alrededor de luz, paciencia, composición y comportamiento ético para capturar aves sin alterar su entorno.',
     points: ['Luz de amanecer', 'Pausas extendidas', 'Consejos técnicos'],
+    image: gallery[1],
   },
   {
     title: 'Sunrise + Café Local',
@@ -112,6 +137,7 @@ const experiences = [
     duration: '5:30 a.m.',
     copy: 'Vive la actividad más intensa del bosque en las primeras horas y cierra la mañana con café costarricense y conversación local.',
     points: ['Aves activas', 'Café de la zona', 'Ambiente premium'],
+    image: gallery[2],
   },
   {
     title: 'Private Birding Experience',
@@ -119,6 +145,7 @@ const experiences = [
     duration: 'Flexible',
     copy: 'Experiencia privada para parejas, familias o grupos pequeños, ajustada a tus intereses, condición física y objetivos de fotografía.',
     points: ['Ruta personalizada', 'Atención 1:1', 'Horarios a convenir'],
+    image: gallery[3],
   },
 ];
 
@@ -249,13 +276,22 @@ export default function Home() {
       </header>
 
       <section id="inicio" className="hero relative min-h-[100svh] isolate overflow-hidden text-white">
-        <div className="hero-slider absolute inset-0 -z-20" aria-hidden="true">
+        <div className="hero-slider absolute inset-0 -z-20" aria-label="Galería hero de aves de La Vieja Adventures">
           {heroImages.map((image, index) => (
             <div
-              key={image}
-              className="hero-frame absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${image})`, animationDelay: `${index * 5}s` }}
-            />
+              key={image.src}
+              className="hero-frame absolute inset-0"
+              style={{ animationDelay: `${index * 5}s` }}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                priority={index === 0}
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
           ))}
         </div>
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_25%,rgba(217,171,83,.28),transparent_34%),linear-gradient(90deg,rgba(4,18,12,.95),rgba(4,18,12,.67)_42%,rgba(4,18,12,.18))]" />
@@ -337,7 +373,16 @@ export default function Home() {
           <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {experiences.map((experience) => (
               <article key={experience.title} className="experience-card reveal">
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-200">{experience.eyebrow}</p>
+                <div className="experience-media">
+                  <Image
+                    src={experience.image.src}
+                    alt={`${experience.image.alt} para ${experience.title}`}
+                    fill
+                    sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                <p className="mt-5 text-xs font-black uppercase tracking-[0.22em] text-amber-200">{experience.eyebrow}</p>
                 <h3 className="mt-4 font-serif text-2xl font-bold">{experience.title}</h3>
                 <p className="mt-2 inline-flex rounded-full bg-white/10 px-3 py-1 text-sm font-semibold text-emerald-100">{experience.duration}</p>
                 <p className="mt-5 text-sm leading-7 text-white/72">{experience.copy}</p>
@@ -372,10 +417,40 @@ export default function Home() {
           <div className="gallery-grid mt-12">
             {gallery.map((image, index) => (
               <figure key={image.src} className={`gallery-item reveal ${index === 0 || index === 3 ? 'gallery-tall' : ''}`}>
-                <img src={image.src} alt={image.alt} loading={index < 2 ? 'eager' : 'lazy'} decoding="async" />
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  priority={index < 2}
+                />
                 <figcaption>{image.label}</figcaption>
               </figure>
             ))}
+          </div>
+
+          <div className="integrated-gallery mt-10 reveal" aria-labelledby="integrated-gallery-title">
+            <div className="integrated-gallery-copy">
+              <p className="eyebrow text-emerald-900">Imágenes integradas</p>
+              <h3 id="integrated-gallery-title" className="font-serif text-3xl font-black tracking-tight text-emerald-950">Las fotos viven dentro de la experiencia web.</h3>
+              <p className="mt-3 leading-7 text-slate-700">
+                Cada imagen se renderiza directamente en la página con carga responsiva, textos alternativos descriptivos y tamaños optimizados para móvil, tablet y escritorio, sin depender de una redirección a Drive.
+              </p>
+            </div>
+            <div className="integrated-gallery-strip" aria-label="Mosaico integrado de aves y bosque tropical">
+              {gallery.slice(0, 4).map((image) => (
+                <figure key={`integrated-${image.src}`} className="integrated-gallery-thumb">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    sizes="(min-width: 1024px) 15vw, (min-width: 640px) 25vw, 50vw"
+                  />
+                </figure>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -461,12 +536,12 @@ export default function Home() {
               </div>
             </div>
             <div className="relative min-h-[24rem]">
-              <img
-                src={commonsImage('Pteroglossus torquatus Costa Rica.jpg', 1200)}
-                alt="Experiencia de birdwatching en bosque tropical de Costa Rica"
-                className="absolute inset-0 h-full w-full object-cover"
-                loading="lazy"
-                decoding="async"
+              <Image
+                src={gallery[4].src}
+                alt="Experiencia de birdwatching en bosque tropical de Costa Rica con La Vieja Adventures"
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#07180f] via-transparent to-transparent" />
             </div>
