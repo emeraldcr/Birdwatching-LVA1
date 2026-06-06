@@ -2,41 +2,69 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Birdwatching at La Vieja Adventures | Sucre, San Carlos, Costa Rica',
-  description: 'Experiencia guiada de observación de aves en Costa Rica. Tours de fotografía de aves, tours privados, educativos y más en Sucre, San Carlos, Alajuela.',
-  keywords: 'birdwatching Costa Rica, observación de aves, San Carlos, fotografía de aves, ecoturismo, La Vieja Adventures, avistamiento aves, tour naturaleza',
-  openGraph: {
-    title: 'Birdwatching at La Vieja Adventures',
-    description: 'Experiencia guiada de observación de aves en Sucre, San Carlos, Costa Rica',
-    type: 'website',
-    locale: 'es_CR',
+  metadataBase: new URL('https://lavieja-adventures.com'),
+  title: {
+    default: 'La Vieja Adventures Birdwatching | Tours de aves en Costa Rica',
+    template: '%s | La Vieja Adventures',
   },
+  description:
+    'Reserva experiencias premium de birdwatching, fotografía de naturaleza, senderismo y turismo rural auténtico en Sucre, San Carlos, Costa Rica.',
+  keywords: [
+    'La Vieja Adventures Birdwatching',
+    'birdwatching Costa Rica',
+    'observación de aves San Carlos',
+    'fotografía de aves Costa Rica',
+    'turismo de naturaleza Costa Rica',
+    'ecoturismo Sucre San Carlos',
+    'tours privados de aves Costa Rica',
+  ],
+  applicationName: 'La Vieja Adventures Birdwatching',
+  authors: [{ name: 'La Vieja Adventures' }],
+  creator: 'La Vieja Adventures',
+  publisher: 'La Vieja Adventures',
   alternates: {
-    languages: {
-      es: 'https://example.com/es',
-      en: 'https://example.com/en',
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'La Vieja Adventures Birdwatching',
+    description:
+      'Experiencias guiadas de observación de aves, fotografía de naturaleza y aventura rural en Sucre, San Carlos, Costa Rica.',
+    url: 'https://lavieja-adventures.com',
+    siteName: 'La Vieja Adventures',
+    locale: 'es_CR',
+    type: 'website',
+    images: [
+      {
+        url: 'https://source.unsplash.com/1200x630/?costa-rica,birdwatching,rainforest',
+        width: 1200,
+        height: 630,
+        alt: 'Birdwatching en el bosque tropical de Costa Rica con La Vieja Adventures',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'La Vieja Adventures Birdwatching',
+    description: 'Tours premium de observación de aves y fotografía de naturaleza en Costa Rica.',
+    images: ['https://source.unsplash.com/1200x630/?hummingbird,costa-rica,rainforest'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
     },
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es">
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#1d5d3b" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="bg-warm-white text-gray-900 font-sans">
-        {children}
-      </body>
+    <html lang="es-CR">
+      <body className="font-sans">{children}</body>
     </html>
   );
 }
