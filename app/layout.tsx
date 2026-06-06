@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://source.unsplash.com/1200x630/?costa-rica,birdwatching,rainforest',
+        url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Pteroglossus%20torquatus%20Costa%20Rica.jpg?width=1200',
         width: 1200,
         height: 630,
         alt: 'Birdwatching en el bosque tropical de Costa Rica con La Vieja Adventures',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'La Vieja Adventures Birdwatching',
     description: 'Tours premium de observación de aves y fotografía de naturaleza en Costa Rica.',
-    images: ['https://source.unsplash.com/1200x630/?hummingbird,costa-rica,rainforest'],
+    images: ['https://commons.wikimedia.org/wiki/Special:FilePath/Pteroglossus%20torquatus%20Costa%20Rica.jpg?width=1200'],
   },
   robots: {
     index: true,

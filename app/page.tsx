@@ -3,6 +3,8 @@ const bookingMessage = encodeURIComponent(
   'Hola La Vieja Adventures, quiero reservar una experiencia de Birdwatching. ¿Me pueden compartir disponibilidad y opciones?'
 );
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${bookingMessage}`;
+const commonsImage = (fileName: string, width = 1600) =>
+  `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(fileName)}?width=${width}`;
 
 const navItems = [
   { label: 'Experiencias', href: '#experiencias' },
@@ -12,41 +14,80 @@ const navItems = [
 ];
 
 const heroImages = [
-  'https://source.unsplash.com/1800x1200/?costa-rica,birdwatching,hummingbird',
-  'https://source.unsplash.com/1800x1200/?rainforest,bird,costa-rica',
-  'https://source.unsplash.com/1800x1200/?tropical,bird,forest',
+  commonsImage('Pteroglossus torquatus Costa Rica.jpg', 2000),
+  commonsImage('Green-crowned Brilliant Hummingbird (46436316322).jpg', 2000),
+  commonsImage('Pharomachrus mocinno Monteverde 01.jpg', 2000),
 ];
 
 const gallery = [
   {
-    src: 'https://source.unsplash.com/900x1200/?woodpecker,rainforest',
-    alt: 'Pájaro carpintero entre ramas de bosque tropical',
-    label: 'Bosque vivo',
+    src: commonsImage("Hoffmann\'s Woodpecker.jpg", 1200),
+    alt: 'Carpintero de Hoffmann real fotografiado en Costa Rica',
+    label: 'Carpinteros',
   },
   {
-    src: 'https://source.unsplash.com/1200x800/?hummingbird,flower,costa-rica',
-    alt: 'Colibrí alimentándose en una flor tropical',
+    src: commonsImage('Green-crowned Brilliant Hummingbird (46436303872).jpg', 1400),
+    alt: 'Colibrí Green-crowned Brilliant real en Costa Rica',
     label: 'Colibríes',
   },
   {
-    src: 'https://source.unsplash.com/1200x800/?tanagers,costa-rica,bird',
-    alt: 'Ave colorida posada sobre una rama verde',
+    src: commonsImage('Blue-grey tanager (Thraupis episcopus cana).jpg', 1400),
+    alt: 'Tangara azulada real posada en Costa Rica',
     label: 'Tangaras',
   },
   {
-    src: 'https://source.unsplash.com/900x1200/?birdwatcher,rainforest',
-    alt: 'Observador de aves caminando por senderos de bosque',
-    label: 'Senderos privados',
+    src: commonsImage('Pharomachrus mocinno Monteverde 01.jpg', 1200),
+    alt: 'Quetzal resplandeciente real fotografiado en Monteverde, Costa Rica',
+    label: 'Aves icónicas',
   },
   {
-    src: 'https://source.unsplash.com/1200x900/?camera,lens,birdwatching',
-    alt: 'Equipo fotográfico y binoculares para observación de aves',
-    label: 'Fotografía',
+    src: commonsImage('Pteroglossus torquatus Costa Rica.jpg', 1400),
+    alt: 'Arasarí acollarado real fotografiado en Costa Rica',
+    label: 'Dosel tropical',
   },
   {
-    src: 'https://source.unsplash.com/1200x800/?costa-rica,mountains,rainforest',
-    alt: 'Paisaje montañoso verde en Costa Rica',
-    label: 'Sucre, San Carlos',
+    src: commonsImage('Acorn Woodpecker (7047729929).jpg', 1200),
+    alt: 'Carpintero real fotografiado en el valle de Savegre, Costa Rica',
+    label: 'Bosque montano',
+  },
+];
+
+const imageCredits = [
+  {
+    label: 'Collared aracari',
+    author: 'LG Nyqvist',
+    license: 'CC BY-SA 4.0',
+    href: 'https://commons.wikimedia.org/wiki/File:Pteroglossus_torquatus_Costa_Rica.jpg',
+  },
+  {
+    label: 'Green-crowned Brilliant Hummingbird',
+    author: 'Becky Matsubara',
+    license: 'CC BY 2.0',
+    href: 'https://commons.wikimedia.org/wiki/File:Green-crowned_Brilliant_Hummingbird_(46436303872).jpg',
+  },
+  {
+    label: 'Hoffmann’s Woodpecker',
+    author: 'Johnathan Nightingale',
+    license: 'CC BY-SA 3.0',
+    href: 'https://commons.wikimedia.org/wiki/File:Hoffmann%27s_Woodpecker.jpg',
+  },
+  {
+    label: 'Blue-grey tanager',
+    author: 'Charles J. Sharp',
+    license: 'CC BY-SA 4.0',
+    href: 'https://commons.wikimedia.org/wiki/File:Blue-grey_tanager_(Thraupis_episcopus_cana).jpg',
+  },
+  {
+    label: 'Resplendent quetzal',
+    author: 'Cephas',
+    license: 'CC BY-SA 4.0',
+    href: 'https://commons.wikimedia.org/wiki/File:Pharomachrus_mocinno_Monteverde_01.jpg',
+  },
+  {
+    label: 'Acorn Woodpecker',
+    author: 'Don Faulkner',
+    license: 'CC BY-SA 2.0',
+    href: 'https://commons.wikimedia.org/wiki/File:Acorn_Woodpecker_(7047729929).jpg',
   },
 ];
 
@@ -421,7 +462,7 @@ export default function Home() {
             </div>
             <div className="relative min-h-[24rem]">
               <img
-                src="https://source.unsplash.com/1000x1200/?birdwatching,costa-rica,rainforest"
+                src={commonsImage('Pteroglossus torquatus Costa Rica.jpg', 1200)}
                 alt="Experiencia de birdwatching en bosque tropical de Costa Rica"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
@@ -460,6 +501,19 @@ export default function Home() {
         <div className="mx-auto mt-10 max-w-7xl border-t border-white/10 pt-6 text-sm text-white/45">
           © 2026 La Vieja Adventures. Experiencias de turismo responsable en Costa Rica.
         </div>
+        <details className="mx-auto mt-4 max-w-7xl text-xs text-white/45">
+          <summary className="cursor-pointer font-semibold text-white/60">Créditos de fotografía</summary>
+          <ul className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            {imageCredits.map((credit) => (
+              <li key={credit.href}>
+                <a href={credit.href} target="_blank" rel="noreferrer" className="hover:text-white">
+                  {credit.label}
+                </a>{' '}
+                — {credit.author}, {credit.license}.
+              </li>
+            ))}
+          </ul>
+        </details>
       </footer>
 
       <a href={whatsappUrl} className="floating-whatsapp" target="_blank" rel="noreferrer" aria-label="Reservar por WhatsApp">
