@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="La Vieja Adventures Birdwatching">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07180f"/>
+      <stop offset="0.55" stop-color="#2f7b4b"/>
+      <stop offset="1" stop-color="#f8f3e8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="70%" cy="20%" r="55%">
+      <stop offset="0" stop-color="#7df0ff" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#7df0ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <rect width="1200" height="800" fill="url(#glow)"/>
+  <g opacity=".28" filter="url(#soft)">
+    <circle cx="160" cy="130" r="95" fill="#f8f3e8"/>
+    <circle cx="1060" cy="650" r="150" fill="#174d32"/>
+    <circle cx="890" cy="160" r="90" fill="#ffffff"/>
+  </g>
+  <g fill="none" stroke="#06130c" stroke-opacity=".35" stroke-linecap="round">
+    <path d="M-80 620C250 500 430 430 720 315c185-73 330-150 560-280" stroke-width="32"/>
+    <path d="M-70 710C210 610 410 555 665 465c170-60 355-125 610-250" stroke-width="20"/>
+    <path d="M80 90c160 105 310 165 515 190 240 28 408 104 565 225" stroke-width="16"/>
+  </g>
+  <g opacity=".74">
+    <ellipse cx="238" cy="562" rx="92" ry="28" fill="#2f7b4b" transform="rotate(-23 238 562)"/>
+    <ellipse cx="348" cy="510" rx="110" ry="30" fill="#7fb069" transform="rotate(-18 348 510)"/>
+    <ellipse cx="845" cy="296" rx="115" ry="32" fill="#89b96d" transform="rotate(-25 845 296)"/>
+    <ellipse cx="1004" cy="236" rx="92" ry="25" fill="#2f7b4b" transform="rotate(-28 1004 236)"/>
+    <ellipse cx="940" cy="622" rx="120" ry="34" fill="#78a75a" transform="rotate(-16 940 622)"/>
+    <ellipse cx="1060" cy="554" rx="88" ry="26" fill="#2f7b4b" transform="rotate(-32 1060 554)"/>
+  </g>
+  <g transform="translate(558 326)">
+    <ellipse cx="96" cy="70" rx="112" ry="74" fill="#2457d6"/>
+    <ellipse cx="152" cy="30" rx="52" ry="42" fill="#2457d6"/>
+    <path d="M186 28l154-32-142 70z" fill="#101827"/>
+    <circle cx="164" cy="18" r="10" fill="#07180f"/>
+    <circle cx="168" cy="14" r="3.5" fill="#fff"/>
+    <path d="M10 86c-105 46-160 72-218 142 92-16 178-38 282-98z" fill="#174d32"/>
+    <path d="M89 136c7 48 3 89-15 143 57-41 101-82 136-142z" fill="#122019" opacity=".9"/>
+    <path d="M63 128c-4 62-15 111-43 170 73-38 126-86 170-160z" fill="#2457d6" opacity=".78"/>
+    <path d="M84 141l-25 92M124 143l-13 90" stroke="#07180f" stroke-opacity=".45" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(175 142)" opacity=".9">
+    <path d="M0 76c62-80 151-94 230-36-89 8-151 30-230 36z" fill="#7df0ff" opacity=".9"/>
+    <path d="M28 104c74-53 143-53 210 0-88 7-139 7-210 0z" fill="#f8b3a1" opacity=".65"/>
+  </g>
+  <g fill="#ffffff" opacity=".18">
+    <circle cx="126" cy="244" r="4"/><circle cx="246" cy="192" r="3"/><circle cx="938" cy="116" r="4"/><circle cx="1030" cy="410" r="3"/><circle cx="764" cy="668" r="4"/>
+  </g>
+  <rect x="34" y="34" width="1132" height="732" rx="38" fill="none" stroke="#fff" stroke-opacity=".14"/>
+</svg>
