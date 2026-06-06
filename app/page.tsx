@@ -5,10 +5,6 @@ const bookingMessage = encodeURIComponent(
   'Hola La Vieja Adventures, quiero reservar una experiencia de Birdwatching. ¿Me pueden compartir disponibilidad y opciones?'
 );
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${bookingMessage}`;
-const driveFolderUrl = 'https://drive.google.com/drive/folders/1178vkUWnZQ_ot86H2xkvBbgS-Oy72chz?usp=drive_link';
-const driveEmbedUrl = 'https://drive.google.com/embeddedfolderview?id=1178vkUWnZQ_ot86H2xkvBbgS-Oy72chz#grid';
-const visualSource = 'Carpeta de imágenes La Vieja Adventures en Google Drive';
-
 const commonsImage = (fileName: string, width = 1600) =>
   `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(fileName)}?width=${width}`;
 
@@ -80,12 +76,6 @@ const gallery = [
 ];
 
 const imageCredits = [
-  {
-    label: visualSource,
-    author: 'La Vieja Adventures',
-    license: 'Uso autorizado por el propietario',
-    href: driveFolderUrl,
-  },
   {
     label: 'Collared aracari',
     author: 'LG Nyqvist',
@@ -440,24 +430,27 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="drive-gallery mt-10 reveal" aria-labelledby="drive-gallery-title">
-            <div className="drive-gallery-copy">
-              <p className="eyebrow text-emerald-900">Fuente visual completa</p>
-              <h3 id="drive-gallery-title" className="font-serif text-3xl font-black tracking-tight text-emerald-950">Todas las imágenes disponibles en Google Drive.</h3>
+          <div className="integrated-gallery mt-10 reveal" aria-labelledby="integrated-gallery-title">
+            <div className="integrated-gallery-copy">
+              <p className="eyebrow text-emerald-900">Imágenes integradas</p>
+              <h3 id="integrated-gallery-title" className="font-serif text-3xl font-black tracking-tight text-emerald-950">Las fotos viven dentro de la experiencia web.</h3>
               <p className="mt-3 leading-7 text-slate-700">
-                La galería incrustada carga la carpeta original para mostrar el set completo de imágenes disponible para La Vieja Adventures, mientras las secciones principales usan versiones responsivas con textos alternativos descriptivos.
+                Cada imagen se renderiza directamente en la página con carga responsiva, textos alternativos descriptivos y tamaños optimizados para móvil, tablet y escritorio, sin depender de una redirección a Drive.
               </p>
-              <a href={driveFolderUrl} className="mt-5 inline-flex font-bold text-emerald-900 hover:text-emerald-700" target="_blank" rel="noreferrer">
-                Abrir carpeta en Google Drive →
-              </a>
             </div>
-            <iframe
-              src={driveEmbedUrl}
-              title="Carpeta completa de imágenes de La Vieja Adventures en Google Drive"
-              className="drive-gallery-frame"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+            <div className="integrated-gallery-strip" aria-label="Mosaico integrado de aves y bosque tropical">
+              {gallery.slice(0, 4).map((image) => (
+                <figure key={`integrated-${image.src}`} className="integrated-gallery-thumb">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    sizes="(min-width: 1024px) 15vw, (min-width: 640px) 25vw, 50vw"
+                  />
+                </figure>
+              ))}
+            </div>
           </div>
         </div>
       </section>
