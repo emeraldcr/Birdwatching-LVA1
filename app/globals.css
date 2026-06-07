@@ -244,13 +244,24 @@ button:focus-visible {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
-  border-radius: 999px;
+  right: 1rem;
+  display: inline-flex;
+  max-width: max-content;
+  flex-direction: column;
+  gap: .18rem;
+  border-radius: 1rem;
   background: rgba(7,24,15,.78);
   color: white;
   padding: .65rem 1rem;
   font-size: .86rem;
   font-weight: 850;
   backdrop-filter: blur(12px);
+}
+
+.gallery-item figcaption em {
+  color: #f6d78d;
+  font-size: .8rem;
+  font-weight: 700;
 }
 
 .faq-item {

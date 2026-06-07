@@ -15,64 +15,66 @@ const birdwatchingImage = (fileName: string) => `/images/birdwatching/${fileName
 
 const heroImage = birdwatchingImage('ade4cbcb-0faa-48a1-9d51-e1ef35b4ea76.jpeg');
 
-const featuredBirdAnalysis = {
-  commonName: 'Xenops rayado',
-  englishName: 'Streaked Xenops',
-  scientificName: 'Xenops rutilans',
-  analysis:
-    'Identificación visual probable por el plumaje café fuertemente estriado, ceja clara, pico fino ligeramente curvado hacia arriba y cola rojiza visible mientras explora ramas del bosque.',
-};
-
 const gallery = [
   {
     src: birdwatchingImage('ade4cbcb-0faa-48a1-9d51-e1ef35b4ea76.jpeg'),
     alt: 'Fotografía de referencia del tour de birdwatching de La Vieja Adventures',
-    label: 'Birdwatching real',
+    label: 'Xenops rayado',
+    scientificName: 'Xenops rutilans',
   },
   {
     src: birdwatchingImage('10e47434-c50d-4425-b82b-ed4236d80b5d.jpeg'),
     alt: 'Imagen de referencia de aves y naturaleza para la experiencia guiada',
-    label: 'Aves locales',
+    label: 'Semillero variable',
+    scientificName: 'Sporophila corvina',
   },
   {
     src: birdwatchingImage('5aff8c5b-442c-4ef8-8acb-412c073f9100.jpeg'),
     alt: 'Fotografía de referencia de biodiversidad local en el recorrido',
-    label: 'Biodiversidad',
+    label: 'Colibrí de cola rufa',
+    scientificName: 'Amazilia tzacatl',
   },
   {
     src: birdwatchingImage('2f727422-8f07-4936-8c40-69e9d530a087.jpeg'),
     alt: 'Imagen del entorno natural usado como referencia visual de la página',
-    label: 'Bosque tropical',
+    label: 'Carpintero carinegro',
+    scientificName: 'Melanerpes pucherani',
   },
   {
     src: birdwatchingImage('b8cd51a3-ba04-4c29-88ba-fa3b88e07bf3.jpeg'),
     alt: 'Fotografía de referencia para senderos y puntos de observación',
-    label: 'Senderos',
+    label: 'Tangara veranera',
+    scientificName: 'Piranga rubra',
   },
   {
     src: birdwatchingImage('31555f0b-5b6c-43cc-a3ef-efd8976a0a10.jpeg'),
     alt: 'Imagen de referencia del ambiente de La Vieja Adventures',
-    label: 'Experiencia local',
+    label: 'Carpintero oliváceo',
+    scientificName: 'Colaptes rubiginosus',
   },
   {
     src: birdwatchingImage('8a916eb1-9ac7-4eef-9ca5-4e7fca45fbe7.jpeg'),
     alt: 'Fotografía de referencia para composición de naturaleza y aves',
-    label: 'Fotografía ética',
+    label: 'Tangara azulada',
+    scientificName: 'Thraupis episcopus',
   },
   {
     src: birdwatchingImage('5adaf470-7207-482e-a023-dcb2fa9f1fb6.jpeg'),
     alt: 'Detalle visual de la experiencia de observación de aves',
-    label: 'Detalles del tour',
+    label: 'Ermitaño colilargo',
+    scientificName: 'Phaethornis longirostris',
   },
   {
     src: birdwatchingImage('100ccdec-209d-4d37-86ed-981a3060dc8d.jpeg'),
     alt: 'Imagen de referencia de naturaleza para el contenido web',
-    label: 'Naturaleza viva',
+    label: 'Elaenia copetona',
+    scientificName: 'Elaenia flavogaster',
   },
   {
     src: birdwatchingImage('a04cb7a1-b5f4-48fd-b5fc-38e05d5362c3.jpeg'),
     alt: 'Fotografía de referencia para visitantes del tour de birdwatching',
-    label: 'Momentos reales',
+    label: 'Colibrí de cola rufa',
+    scientificName: 'Amazilia tzacatl',
   },
   {
     src: birdwatchingImage('94cbfada-965f-4039-8dc9-1f8042be93bd.jpeg'),
@@ -82,7 +84,8 @@ const gallery = [
   {
     src: birdwatchingImage('2ab6f78f-832a-4a94-901e-dc346f41dacb.jpeg'),
     alt: 'Fotografía de referencia de avistamiento y entorno rural',
-    label: 'Avistamientos',
+    label: 'Carpintero de Hoffmann',
+    scientificName: 'Melanerpes hoffmannii',
   },
   {
     src: birdwatchingImage('5207a9ea-d688-41a7-a4b8-4ab7c0e37ecc.jpeg'),
@@ -279,24 +282,6 @@ export default function Home() {
           </div>
 
           <aside className="mt-12 grid gap-4 lg:mt-0 reveal reveal-delay" aria-label="Datos clave del tour">
-            <figure className="overflow-hidden rounded-[2rem] border border-white/15 bg-white/12 text-white shadow-2xl shadow-black/20 backdrop-blur-md">
-              <img
-                src={heroImage}
-                alt="Xenops rayado observado durante el tour de birdwatching en La Vieja Adventures"
-                className="h-64 w-full object-cover sm:h-72 lg:h-80"
-                loading="eager"
-                decoding="async"
-              />
-              <figcaption className="space-y-3 p-5">
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-200">Ave vista en la imagen</p>
-                <div>
-                  <strong className="block font-serif text-2xl">{featuredBirdAnalysis.commonName}</strong>
-                  <span className="text-sm italic text-emerald-100">Nombre científico: {featuredBirdAnalysis.scientificName}</span>
-                </div>
-                <p className="text-sm leading-6 text-white/76">{featuredBirdAnalysis.analysis}</p>
-                <p className="text-xs font-semibold text-white/62">También conocido como {featuredBirdAnalysis.englishName}.</p>
-              </figcaption>
-            </figure>
             <div className="premium-card bg-white/12 text-white backdrop-blur-md">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-100">Experiencia recomendada</p>
               <h2 className="mt-3 font-serif text-3xl font-bold">Sunrise Birdwatching + Café Local</h2>
@@ -390,7 +375,10 @@ export default function Home() {
             {gallery.map((image, index) => (
               <figure key={image.src} className={`gallery-item reveal ${index === 0 || index === 3 ? 'gallery-tall' : ''}`}>
                 <img src={image.src} alt={image.alt} loading={index < 2 ? 'eager' : 'lazy'} decoding="async" />
-                <figcaption>{image.label}</figcaption>
+                <figcaption>
+                  <span>{image.label}</span>
+                  {'scientificName' in image && <em>{image.scientificName}</em>}
+                </figcaption>
               </figure>
             ))}
           </div>
