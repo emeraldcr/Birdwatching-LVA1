@@ -188,6 +188,7 @@ const content = {
     navItems: [
       { label: 'Experiencias', href: '#experiencias' },
       { label: 'Galería', href: '#galeria' },
+      { label: 'Aves del mes', href: '#aves-destacadas' },
       { label: 'Incluye', href: '#incluye' },
       { label: 'FAQ', href: '#faq' },
     ],
@@ -345,6 +346,7 @@ const content = {
     navItems: [
       { label: 'Experiences', href: '#experiencias' },
       { label: 'Gallery', href: '#galeria' },
+      { label: 'Birds of the month', href: '#aves-destacadas' },
       { label: 'Includes', href: '#incluye' },
       { label: 'FAQ', href: '#faq' },
     ],

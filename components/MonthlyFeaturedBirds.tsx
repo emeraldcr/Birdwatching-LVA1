@@ -24,8 +24,8 @@ type MonthlyFeaturedBirdsProps = {
 export const currentMonth = 'Junio';
 
 // Para actualizar esta sección cada mes, cambiá currentMonth y reemplazá/ajustá
-// los elementos de featuredBirds. Las imágenes reales pueden colocarse en
-// /public/images/birds/ usando las rutas indicadas en cada ave.
+// los elementos de featuredBirds. Las imágenes se toman de
+// /public/images/birdwatching/ para usar fotos reales del repositorio.
 export const featuredBirds: FeaturedBird[] = [
   {
     nameEs: 'Tangara azulada',
@@ -35,7 +35,7 @@ export const featuredBirds: FeaturedBird[] = [
     sightingChance: 'Alta',
     bestTime: 'Mañana',
     habitat: 'Bordes de bosque y áreas abiertas con árboles',
-    image: '/images/birds/tangara-azulada.jpg',
+    image: '/images/birdwatching/8a916eb1-9ac7-4eef-9ca5-4e7fca45fbe7.jpeg',
   },
   {
     nameEs: 'Colibrí de cola rufa',
@@ -45,7 +45,7 @@ export const featuredBirds: FeaturedBird[] = [
     sightingChance: 'Alta',
     bestTime: 'Amanecer y primeras horas de la mañana',
     habitat: 'Jardines, flores y bordes de sendero',
-    image: '/images/birds/colibri-cola-rufa.jpg',
+    image: '/images/birdwatching/5aff8c5b-442c-4ef8-8acb-412c073f9100.jpeg',
   },
   {
     nameEs: 'Carpintero oliváceo',
@@ -55,7 +55,7 @@ export const featuredBirds: FeaturedBird[] = [
     sightingChance: 'Media',
     bestTime: 'Mañana',
     habitat: 'Bosque húmedo y árboles maduros',
-    image: '/images/birds/carpintero-olivaceo.jpg',
+    image: '/images/birdwatching/31555f0b-5b6c-43cc-a3ef-efd8976a0a10.jpeg',
   },
   {
     nameEs: 'Elaenia copetona',
@@ -65,17 +65,17 @@ export const featuredBirds: FeaturedBird[] = [
     sightingChance: 'Media',
     bestTime: 'Mañana',
     habitat: 'Áreas abiertas, bordes de bosque y vegetación secundaria',
-    image: '/images/birds/elaenia-copetona.jpg',
+    image: '/images/birdwatching/100ccdec-209d-4d37-86ed-981a3060dc8d.jpeg',
   },
   {
-    nameEs: 'Tucán Arasarí',
-    nameEn: 'Collared Aracari',
-    scientificName: 'Pteroglossus torquatus',
-    category: 'Tucán',
+    nameEs: 'Semillero variable',
+    nameEn: 'Variable Seedeater',
+    scientificName: 'Sporophila corvina',
+    category: 'Semillero',
     sightingChance: 'Media',
-    bestTime: 'Amanecer',
-    habitat: 'Copas de árboles, bordes de bosque y zonas frutales',
-    image: '/images/birds/tucan-arasari.jpg',
+    bestTime: 'Mañana y tardes frescas',
+    habitat: 'Pastizales, áreas abiertas y bordes con semillas disponibles',
+    image: '/images/birdwatching/10e47434-c50d-4425-b82b-ed4236d80b5d.jpeg',
   },
 ];
 
@@ -96,7 +96,7 @@ const copy = {
     habitat: 'Hábitat probable',
     imageAltPrefix: 'Fotografía de referencia de',
     placeholder: 'Imagen por agregar',
-    placeholderHint: 'Colocá la foto en /public/images/birds/',
+    placeholderHint: 'Revisá la ruta en /public/images/birdwatching/',
     ctaTitle: '¿Querés intentar observarlas en persona?',
     ctaText:
       'Reservá una salida de birdwatching al amanecer y descubrí las aves que habitan los senderos, miradores y bosques de montaña de La Vieja Adventures.',
@@ -119,7 +119,7 @@ const copy = {
     habitat: 'Likely habitat',
     imageAltPrefix: 'Reference photo of',
     placeholder: 'Image coming soon',
-    placeholderHint: 'Place the photo in /public/images/birds/',
+    placeholderHint: 'Check the path in /public/images/birdwatching/',
     ctaTitle: 'Want to try spotting them in person?',
     ctaText:
       'Book a sunrise birdwatching outing and discover the birds living around the trails, viewpoints, and mountain forests of La Vieja Adventures.',
