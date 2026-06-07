@@ -3,8 +3,6 @@ const bookingMessage = encodeURIComponent(
   'Hola La Vieja Adventures, quiero reservar una experiencia de Birdwatching. ¿Me pueden compartir disponibilidad y opciones?'
 );
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${bookingMessage}`;
-const commonsImage = (fileName: string, width = 1600) =>
-  `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(fileName)}?width=${width}`;
 
 const navItems = [
   { label: 'Experiencias', href: '#experiencias' },
@@ -13,81 +11,79 @@ const navItems = [
   { label: 'FAQ', href: '#faq' },
 ];
 
+const birdwatchingImage = (fileName: string) => `/images/birdwatching/${fileName}`;
+
 const heroImages = [
-  commonsImage('Pteroglossus torquatus Costa Rica.jpg', 2000),
-  commonsImage('Green-crowned Brilliant Hummingbird (46436316322).jpg', 2000),
-  commonsImage('Pharomachrus mocinno Monteverde 01.jpg', 2000),
+  birdwatchingImage('ade4cbcb-0faa-48a1-9d51-e1ef35b4ea76.jpeg'),
+  birdwatchingImage('10e47434-c50d-4425-b82b-ed4236d80b5d.jpeg'),
+  birdwatchingImage('5aff8c5b-442c-4ef8-8acb-412c073f9100.jpeg'),
 ];
 
 const gallery = [
   {
-    src: commonsImage("Hoffmann\'s Woodpecker.jpg", 1200),
-    alt: 'Carpintero de Hoffmann real fotografiado en Costa Rica',
-    label: 'Carpinteros',
+    src: birdwatchingImage('ade4cbcb-0faa-48a1-9d51-e1ef35b4ea76.jpeg'),
+    alt: 'Fotografía de referencia del tour de birdwatching de La Vieja Adventures',
+    label: 'Birdwatching real',
   },
   {
-    src: commonsImage('Green-crowned Brilliant Hummingbird (46436303872).jpg', 1400),
-    alt: 'Colibrí Green-crowned Brilliant real en Costa Rica',
-    label: 'Colibríes',
+    src: birdwatchingImage('10e47434-c50d-4425-b82b-ed4236d80b5d.jpeg'),
+    alt: 'Imagen de referencia de aves y naturaleza para la experiencia guiada',
+    label: 'Aves locales',
   },
   {
-    src: commonsImage('Blue-grey tanager (Thraupis episcopus cana).jpg', 1400),
-    alt: 'Tangara azulada real posada en Costa Rica',
-    label: 'Tangaras',
+    src: birdwatchingImage('5aff8c5b-442c-4ef8-8acb-412c073f9100.jpeg'),
+    alt: 'Fotografía de referencia de biodiversidad local en el recorrido',
+    label: 'Biodiversidad',
   },
   {
-    src: commonsImage('Pharomachrus mocinno Monteverde 01.jpg', 1200),
-    alt: 'Quetzal resplandeciente real fotografiado en Monteverde, Costa Rica',
-    label: 'Aves icónicas',
+    src: birdwatchingImage('2f727422-8f07-4936-8c40-69e9d530a087.jpeg'),
+    alt: 'Imagen del entorno natural usado como referencia visual de la página',
+    label: 'Bosque tropical',
   },
   {
-    src: commonsImage('Pteroglossus torquatus Costa Rica.jpg', 1400),
-    alt: 'Arasarí acollarado real fotografiado en Costa Rica',
-    label: 'Dosel tropical',
+    src: birdwatchingImage('b8cd51a3-ba04-4c29-88ba-fa3b88e07bf3.jpeg'),
+    alt: 'Fotografía de referencia para senderos y puntos de observación',
+    label: 'Senderos',
   },
   {
-    src: commonsImage('Acorn Woodpecker (7047729929).jpg', 1200),
-    alt: 'Carpintero real fotografiado en el valle de Savegre, Costa Rica',
-    label: 'Bosque montano',
-  },
-];
-
-const imageCredits = [
-  {
-    label: 'Collared aracari',
-    author: 'LG Nyqvist',
-    license: 'CC BY-SA 4.0',
-    href: 'https://commons.wikimedia.org/wiki/File:Pteroglossus_torquatus_Costa_Rica.jpg',
+    src: birdwatchingImage('31555f0b-5b6c-43cc-a3ef-efd8976a0a10.jpeg'),
+    alt: 'Imagen de referencia del ambiente de La Vieja Adventures',
+    label: 'Experiencia local',
   },
   {
-    label: 'Green-crowned Brilliant Hummingbird',
-    author: 'Becky Matsubara',
-    license: 'CC BY 2.0',
-    href: 'https://commons.wikimedia.org/wiki/File:Green-crowned_Brilliant_Hummingbird_(46436303872).jpg',
+    src: birdwatchingImage('8a916eb1-9ac7-4eef-9ca5-4e7fca45fbe7.jpeg'),
+    alt: 'Fotografía de referencia para composición de naturaleza y aves',
+    label: 'Fotografía ética',
   },
   {
-    label: 'Hoffmann’s Woodpecker',
-    author: 'Johnathan Nightingale',
-    license: 'CC BY-SA 3.0',
-    href: 'https://commons.wikimedia.org/wiki/File:Hoffmann%27s_Woodpecker.jpg',
+    src: birdwatchingImage('5adaf470-7207-482e-a023-dcb2fa9f1fb6.jpeg'),
+    alt: 'Detalle visual de la experiencia de observación de aves',
+    label: 'Detalles del tour',
   },
   {
-    label: 'Blue-grey tanager',
-    author: 'Charles J. Sharp',
-    license: 'CC BY-SA 4.0',
-    href: 'https://commons.wikimedia.org/wiki/File:Blue-grey_tanager_(Thraupis_episcopus_cana).jpg',
+    src: birdwatchingImage('100ccdec-209d-4d37-86ed-981a3060dc8d.jpeg'),
+    alt: 'Imagen de referencia de naturaleza para el contenido web',
+    label: 'Naturaleza viva',
   },
   {
-    label: 'Resplendent quetzal',
-    author: 'Cephas',
-    license: 'CC BY-SA 4.0',
-    href: 'https://commons.wikimedia.org/wiki/File:Pharomachrus_mocinno_Monteverde_01.jpg',
+    src: birdwatchingImage('a04cb7a1-b5f4-48fd-b5fc-38e05d5362c3.jpeg'),
+    alt: 'Fotografía de referencia para visitantes del tour de birdwatching',
+    label: 'Momentos reales',
   },
   {
-    label: 'Acorn Woodpecker',
-    author: 'Don Faulkner',
-    license: 'CC BY-SA 2.0',
-    href: 'https://commons.wikimedia.org/wiki/File:Acorn_Woodpecker_(7047729929).jpg',
+    src: birdwatchingImage('94cbfada-965f-4039-8dc9-1f8042be93bd.jpeg'),
+    alt: 'Imagen de referencia de paisaje natural de la experiencia',
+    label: 'Paisaje',
+  },
+  {
+    src: birdwatchingImage('2ab6f78f-832a-4a94-901e-dc346f41dacb.jpeg'),
+    alt: 'Fotografía de referencia de avistamiento y entorno rural',
+    label: 'Avistamientos',
+  },
+  {
+    src: birdwatchingImage('5207a9ea-d688-41a7-a4b8-4ab7c0e37ecc.jpeg'),
+    alt: 'Imagen de referencia para cierre visual de la galería',
+    label: 'La Vieja Adventures',
   },
 ];
 
@@ -363,7 +359,7 @@ export default function Home() {
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end reveal">
             <div className="max-w-3xl">
               <p className="eyebrow text-emerald-900">Galería visual</p>
-              <h2 id="gallery-title" className="section-title">Bosque tropical, aves, miradores y fotografía de naturaleza.</h2>
+              <h2 id="gallery-title" className="section-title">Fotos reales del repositorio como referencia visual de la experiencia.</h2>
             </div>
             <a href={whatsappUrl} className="btn btn-dark self-start" target="_blank" rel="noreferrer">
               Planear mi visita
@@ -462,7 +458,7 @@ export default function Home() {
             </div>
             <div className="relative min-h-[24rem]">
               <img
-                src={commonsImage('Pteroglossus torquatus Costa Rica.jpg', 1200)}
+                src={birdwatchingImage('5207a9ea-d688-41a7-a4b8-4ab7c0e37ecc.jpeg')}
                 alt="Experiencia de birdwatching en bosque tropical de Costa Rica"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
@@ -501,19 +497,9 @@ export default function Home() {
         <div className="mx-auto mt-10 max-w-7xl border-t border-white/10 pt-6 text-sm text-white/45">
           © 2026 La Vieja Adventures. Experiencias de turismo responsable en Costa Rica.
         </div>
-        <details className="mx-auto mt-4 max-w-7xl text-xs text-white/45">
-          <summary className="cursor-pointer font-semibold text-white/60">Créditos de fotografía</summary>
-          <ul className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-            {imageCredits.map((credit) => (
-              <li key={credit.href}>
-                <a href={credit.href} target="_blank" rel="noreferrer" className="hover:text-white">
-                  {credit.label}
-                </a>{' '}
-                — {credit.author}, {credit.license}.
-              </li>
-            ))}
-          </ul>
-        </details>
+        <p className="mx-auto mt-4 max-w-7xl text-xs text-white/45">
+          Fotografías enlazadas desde <code>/public/images/birdwatching</code> como material visual propio del repositorio.
+        </p>
       </footer>
 
       <a href={whatsappUrl} className="floating-whatsapp" target="_blank" rel="noreferrer" aria-label="Reservar por WhatsApp">
