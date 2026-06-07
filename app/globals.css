@@ -157,18 +157,6 @@ button:focus-visible {
   box-shadow: 0 28px 60px rgba(0,0,0,.18);
 }
 
-.hero-frame {
-  opacity: 0;
-  transform: scale(1.06);
-  animation: heroFade 15s infinite;
-}
-
-@keyframes heroFade {
-  0%, 29% { opacity: 0; transform: scale(1.06); }
-  4%, 31% { opacity: 1; }
-  42%, 100% { opacity: 0; transform: scale(1.12); }
-}
-
 .reveal {
   animation: reveal-up .78s cubic-bezier(.2,.8,.2,1) both;
   animation-timeline: view();
@@ -256,13 +244,24 @@ button:focus-visible {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
-  border-radius: 999px;
+  right: 1rem;
+  display: inline-flex;
+  max-width: max-content;
+  flex-direction: column;
+  gap: .18rem;
+  border-radius: 1rem;
   background: rgba(7,24,15,.78);
   color: white;
   padding: .65rem 1rem;
   font-size: .86rem;
   font-weight: 850;
   backdrop-filter: blur(12px);
+}
+
+.gallery-item figcaption em {
+  color: #f6d78d;
+  font-size: .8rem;
+  font-weight: 700;
 }
 
 .faq-item {

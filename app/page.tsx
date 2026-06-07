@@ -13,62 +13,68 @@ const navItems = [
 
 const birdwatchingImage = (fileName: string) => `/images/birdwatching/${fileName}`;
 
-const heroImages = [
-  birdwatchingImage('ade4cbcb-0faa-48a1-9d51-e1ef35b4ea76.jpeg'),
-  birdwatchingImage('10e47434-c50d-4425-b82b-ed4236d80b5d.jpeg'),
-  birdwatchingImage('5aff8c5b-442c-4ef8-8acb-412c073f9100.jpeg'),
-];
+const heroImage = birdwatchingImage('ade4cbcb-0faa-48a1-9d51-e1ef35b4ea76.jpeg');
 
 const gallery = [
   {
     src: birdwatchingImage('ade4cbcb-0faa-48a1-9d51-e1ef35b4ea76.jpeg'),
     alt: 'Fotografía de referencia del tour de birdwatching de La Vieja Adventures',
-    label: 'Birdwatching real',
+    label: 'Xenops rayado',
+    scientificName: 'Xenops rutilans',
   },
   {
     src: birdwatchingImage('10e47434-c50d-4425-b82b-ed4236d80b5d.jpeg'),
     alt: 'Imagen de referencia de aves y naturaleza para la experiencia guiada',
-    label: 'Aves locales',
+    label: 'Semillero variable',
+    scientificName: 'Sporophila corvina',
   },
   {
     src: birdwatchingImage('5aff8c5b-442c-4ef8-8acb-412c073f9100.jpeg'),
     alt: 'Fotografía de referencia de biodiversidad local en el recorrido',
-    label: 'Biodiversidad',
+    label: 'Colibrí de cola rufa',
+    scientificName: 'Amazilia tzacatl',
   },
   {
     src: birdwatchingImage('2f727422-8f07-4936-8c40-69e9d530a087.jpeg'),
     alt: 'Imagen del entorno natural usado como referencia visual de la página',
-    label: 'Bosque tropical',
+    label: 'Carpintero carinegro',
+    scientificName: 'Melanerpes pucherani',
   },
   {
     src: birdwatchingImage('b8cd51a3-ba04-4c29-88ba-fa3b88e07bf3.jpeg'),
     alt: 'Fotografía de referencia para senderos y puntos de observación',
-    label: 'Senderos',
+    label: 'Tangara veranera',
+    scientificName: 'Piranga rubra',
   },
   {
     src: birdwatchingImage('31555f0b-5b6c-43cc-a3ef-efd8976a0a10.jpeg'),
     alt: 'Imagen de referencia del ambiente de La Vieja Adventures',
-    label: 'Experiencia local',
+    label: 'Carpintero oliváceo',
+    scientificName: 'Colaptes rubiginosus',
   },
   {
     src: birdwatchingImage('8a916eb1-9ac7-4eef-9ca5-4e7fca45fbe7.jpeg'),
     alt: 'Fotografía de referencia para composición de naturaleza y aves',
-    label: 'Fotografía ética',
+    label: 'Tangara azulada',
+    scientificName: 'Thraupis episcopus',
   },
   {
     src: birdwatchingImage('5adaf470-7207-482e-a023-dcb2fa9f1fb6.jpeg'),
     alt: 'Detalle visual de la experiencia de observación de aves',
-    label: 'Detalles del tour',
+    label: 'Ermitaño colilargo',
+    scientificName: 'Phaethornis longirostris',
   },
   {
     src: birdwatchingImage('100ccdec-209d-4d37-86ed-981a3060dc8d.jpeg'),
     alt: 'Imagen de referencia de naturaleza para el contenido web',
-    label: 'Naturaleza viva',
+    label: 'Elaenia copetona',
+    scientificName: 'Elaenia flavogaster',
   },
   {
     src: birdwatchingImage('a04cb7a1-b5f4-48fd-b5fc-38e05d5362c3.jpeg'),
     alt: 'Fotografía de referencia para visitantes del tour de birdwatching',
-    label: 'Momentos reales',
+    label: 'Colibrí de cola rufa',
+    scientificName: 'Amazilia tzacatl',
   },
   {
     src: birdwatchingImage('94cbfada-965f-4039-8dc9-1f8042be93bd.jpeg'),
@@ -78,7 +84,8 @@ const gallery = [
   {
     src: birdwatchingImage('2ab6f78f-832a-4a94-901e-dc346f41dacb.jpeg'),
     alt: 'Fotografía de referencia de avistamiento y entorno rural',
-    label: 'Avistamientos',
+    label: 'Carpintero de Hoffmann',
+    scientificName: 'Melanerpes hoffmannii',
   },
   {
     src: birdwatchingImage('5207a9ea-d688-41a7-a4b8-4ab7c0e37ecc.jpeg'),
@@ -245,15 +252,11 @@ export default function Home() {
       </header>
 
       <section id="inicio" className="hero relative min-h-[100svh] isolate overflow-hidden text-white">
-        <div className="hero-slider absolute inset-0 -z-20" aria-hidden="true">
-          {heroImages.map((image, index) => (
-            <div
-              key={image}
-              className="hero-frame absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${image})`, animationDelay: `${index * 5}s` }}
-            />
-          ))}
-        </div>
+        <div
+          className="absolute inset-0 -z-20 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroImage})` }}
+          aria-hidden="true"
+        />
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_25%,rgba(217,171,83,.28),transparent_34%),linear-gradient(90deg,rgba(4,18,12,.95),rgba(4,18,12,.67)_42%,rgba(4,18,12,.18))]" />
 
         <div id="contenido" className="mx-auto grid min-h-[100svh] max-w-7xl items-center px-4 pb-20 pt-32 sm:px-6 lg:grid-cols-[1.05fr_.95fr] lg:px-8">
@@ -359,7 +362,10 @@ export default function Home() {
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end reveal">
             <div className="max-w-3xl">
               <p className="eyebrow text-emerald-900">Galería visual</p>
-              <h2 id="gallery-title" className="section-title">Fotos reales del repositorio como referencia visual de la experiencia.</h2>
+              <h2 id="gallery-title" className="section-title">Fotos reales tomadas en La Vieja Adventures.</h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                Todas las fotografías fueron capturadas en La Vieja Adventures, el lugar donde se desarrolla el tour de birdwatching y fotografía de naturaleza.
+              </p>
             </div>
             <a href={whatsappUrl} className="btn btn-dark self-start" target="_blank" rel="noreferrer">
               Planear mi visita
@@ -369,7 +375,10 @@ export default function Home() {
             {gallery.map((image, index) => (
               <figure key={image.src} className={`gallery-item reveal ${index === 0 || index === 3 ? 'gallery-tall' : ''}`}>
                 <img src={image.src} alt={image.alt} loading={index < 2 ? 'eager' : 'lazy'} decoding="async" />
-                <figcaption>{image.label}</figcaption>
+                <figcaption>
+                  <span>{image.label}</span>
+                  {'scientificName' in image && <em>{image.scientificName}</em>}
+                </figcaption>
               </figure>
             ))}
           </div>
@@ -498,7 +507,7 @@ export default function Home() {
           © 2026 La Vieja Adventures. Experiencias de turismo responsable en Costa Rica.
         </div>
         <p className="mx-auto mt-4 max-w-7xl text-xs text-white/45">
-          Fotografías enlazadas desde <code>/public/images/birdwatching</code> como material visual propio del repositorio.
+          Fotografías tomadas en La Vieja Adventures y enlazadas desde <code>/public/images/birdwatching</code> como material visual propio del repositorio.
         </p>
       </footer>
 
