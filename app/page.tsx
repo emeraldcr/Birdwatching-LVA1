@@ -13,11 +13,15 @@ const navItems = [
 
 const birdwatchingImage = (fileName: string) => `/images/birdwatching/${fileName}`;
 
-const heroImages = [
-  birdwatchingImage('ade4cbcb-0faa-48a1-9d51-e1ef35b4ea76.jpeg'),
-  birdwatchingImage('10e47434-c50d-4425-b82b-ed4236d80b5d.jpeg'),
-  birdwatchingImage('5aff8c5b-442c-4ef8-8acb-412c073f9100.jpeg'),
-];
+const heroImage = birdwatchingImage('ade4cbcb-0faa-48a1-9d51-e1ef35b4ea76.jpeg');
+
+const featuredBirdAnalysis = {
+  commonName: 'Xenops rayado',
+  englishName: 'Streaked Xenops',
+  scientificName: 'Xenops rutilans',
+  analysis:
+    'Identificación visual probable por el plumaje café fuertemente estriado, ceja clara, pico fino ligeramente curvado hacia arriba y cola rojiza visible mientras explora ramas del bosque.',
+};
 
 const gallery = [
   {
@@ -245,15 +249,11 @@ export default function Home() {
       </header>
 
       <section id="inicio" className="hero relative min-h-[100svh] isolate overflow-hidden text-white">
-        <div className="hero-slider absolute inset-0 -z-20" aria-hidden="true">
-          {heroImages.map((image, index) => (
-            <div
-              key={image}
-              className="hero-frame absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${image})`, animationDelay: `${index * 5}s` }}
-            />
-          ))}
-        </div>
+        <div
+          className="absolute inset-0 -z-20 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroImage})` }}
+          aria-hidden="true"
+        />
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_25%,rgba(217,171,83,.28),transparent_34%),linear-gradient(90deg,rgba(4,18,12,.95),rgba(4,18,12,.67)_42%,rgba(4,18,12,.18))]" />
 
         <div id="contenido" className="mx-auto grid min-h-[100svh] max-w-7xl items-center px-4 pb-20 pt-32 sm:px-6 lg:grid-cols-[1.05fr_.95fr] lg:px-8">
@@ -279,6 +279,24 @@ export default function Home() {
           </div>
 
           <aside className="mt-12 grid gap-4 lg:mt-0 reveal reveal-delay" aria-label="Datos clave del tour">
+            <figure className="overflow-hidden rounded-[2rem] border border-white/15 bg-white/12 text-white shadow-2xl shadow-black/20 backdrop-blur-md">
+              <img
+                src={heroImage}
+                alt="Xenops rayado observado durante el tour de birdwatching en La Vieja Adventures"
+                className="h-64 w-full object-cover sm:h-72 lg:h-80"
+                loading="eager"
+                decoding="async"
+              />
+              <figcaption className="space-y-3 p-5">
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-200">Ave vista en la imagen</p>
+                <div>
+                  <strong className="block font-serif text-2xl">{featuredBirdAnalysis.commonName}</strong>
+                  <span className="text-sm italic text-emerald-100">Nombre científico: {featuredBirdAnalysis.scientificName}</span>
+                </div>
+                <p className="text-sm leading-6 text-white/76">{featuredBirdAnalysis.analysis}</p>
+                <p className="text-xs font-semibold text-white/62">También conocido como {featuredBirdAnalysis.englishName}.</p>
+              </figcaption>
+            </figure>
             <div className="premium-card bg-white/12 text-white backdrop-blur-md">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-100">Experiencia recomendada</p>
               <h2 className="mt-3 font-serif text-3xl font-bold">Sunrise Birdwatching + Café Local</h2>
@@ -359,7 +377,10 @@ export default function Home() {
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end reveal">
             <div className="max-w-3xl">
               <p className="eyebrow text-emerald-900">Galería visual</p>
-              <h2 id="gallery-title" className="section-title">Fotos reales del repositorio como referencia visual de la experiencia.</h2>
+              <h2 id="gallery-title" className="section-title">Fotos reales tomadas en La Vieja Adventures.</h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                Todas las fotografías fueron capturadas en La Vieja Adventures, el lugar donde se desarrolla el tour de birdwatching y fotografía de naturaleza.
+              </p>
             </div>
             <a href={whatsappUrl} className="btn btn-dark self-start" target="_blank" rel="noreferrer">
               Planear mi visita
@@ -498,7 +519,7 @@ export default function Home() {
           © 2026 La Vieja Adventures. Experiencias de turismo responsable en Costa Rica.
         </div>
         <p className="mx-auto mt-4 max-w-7xl text-xs text-white/45">
-          Fotografías enlazadas desde <code>/public/images/birdwatching</code> como material visual propio del repositorio.
+          Fotografías tomadas en La Vieja Adventures y enlazadas desde <code>/public/images/birdwatching</code> como material visual propio del repositorio.
         </p>
       </footer>
 

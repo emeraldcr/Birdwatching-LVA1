@@ -157,18 +157,6 @@ button:focus-visible {
   box-shadow: 0 28px 60px rgba(0,0,0,.18);
 }
 
-.hero-frame {
-  opacity: 0;
-  transform: scale(1.06);
-  animation: heroFade 15s infinite;
-}
-
-@keyframes heroFade {
-  0%, 29% { opacity: 0; transform: scale(1.06); }
-  4%, 31% { opacity: 1; }
-  42%, 100% { opacity: 0; transform: scale(1.12); }
-}
-
 .reveal {
   animation: reveal-up .78s cubic-bezier(.2,.8,.2,1) both;
   animation-timeline: view();
