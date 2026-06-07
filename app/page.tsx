@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import MonthlyFeaturedBirds from '@/components/MonthlyFeaturedBirds';
 
 type Language = 'es' | 'en';
 
@@ -725,6 +726,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <MonthlyFeaturedBirds language={language} whatsappNumber={whatsappNumber} />
 
       <section id="incluye" className="section bg-white" aria-labelledby="included-title">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_.9fr] lg:px-8">
