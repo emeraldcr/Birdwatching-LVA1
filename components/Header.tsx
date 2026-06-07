@@ -9,6 +9,7 @@ export default function Header() {
     { label: 'Inicio', href: '#' },
     { label: 'Modalidades', href: '#modalities' },
     { label: 'Rutas', href: '#spots' },
+    { label: 'Aves del mes', href: '#aves-destacadas' },
     { label: 'Preguntas', href: '#faq' },
     { label: 'Contacto', href: '#booking' },
   ];
